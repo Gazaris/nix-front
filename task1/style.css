@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+*{
+    margin: 0;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+body{
+    position: relative;
+    min-height: 100vh;
+}
+
+#main-block{
+    padding-bottom: 2.5rem; 
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    background: linear-gradient(#6745fe, #a694f8);
+    box-shadow: 0 0 10px black;
+}
+
+#top-bar{
+    display: flex;
+    flex-direction: row;
+}
+#top-bar > img{
+    width: 70px;
+    max-height: 70px;
+    margin-right: 10px;
+    background-color: white;
+    border: solid 2px black;
+    border-radius: 5px;
+}
+#top-bar > #headings{
+    margin: auto 0;
+}
+
+#nav-bar{
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin-top: 10px;
+    justify-content: center;
+}
+#nav-bar > li{
+    margin: 0 5px;
+    min-height: 50px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background-color: #2102ab;
+    border-radius: 5px;
+    transition: all .2s ease-in-out;
+}
+#nav-bar > li:hover{
+    box-shadow: 0 0 15px black;
+}
+#nav-bar > li:active{
+    box-shadow: 0 0 5px black;
+}
+#nav-bar > li > a{
+    padding: 5px 10px;
+    color: white;
+    text-decoration: none;
+}
+
+#content{
+    margin: 15px;
+}
+#content p{
+    text-indent: 20px;
+}
+
+#contacts{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 500px;
+    margin: 0 auto;
+}
+#contacts > *{
+    margin: 5px 0;
+}
+
+.line{
+    height: 1px;
+    width: 100%;
+    background-color: black;
+}
+
+footer{
+    width: 100%;
+    height: 2.5em;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(#6d51fc, #2f00ff);
+    color: white;
+}
+footer > span{
+    margin: auto 0;
+}

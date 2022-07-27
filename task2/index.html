@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="assets/scripts/messages.js"></script>
+        <link rel="icon" type="image/png" href="assets/images/icon_white.png">
+        <link rel="stylesheet" href="assets/styles/style.css">
+        <title>Chronos</title>
+    </head>
+    <body>
+        <header>
+            <img src="assets/images/icon_transparent.svg" alt="icon" id="main-icon">
+            <span id="site-name">Chronos</span>
+            <div id="navbar">
+                <a href="#">Pinboard</a>
+                <div class="navline"></div>
+                <a href="#">Calendar</a>
+                <div class="navline"></div>
+                <a href="#">Friends</a>
+                <div class="navline"></div>
+                <div onclick="messagesClick()" id="messages-btn" class="btn noselect">Messages <div id="messages-count" class="dead-center-text">8</div></div> 
+            </div>
+            <div id="right-header-part">
+                <img src="assets/images/avatar1.jpg" alt="user_avatar" class="user-avatar">
+                <div id="add-post" class="dead-center-text noselect">+</div>
+            </div>
+        </header>
+        <div id="messages" style="display: none; opacity: 0;">
+            <div class="pointer"></div>
+            <div class="main">
+                <div class="navbar noselect">
+                    <div class="tabs">
+                        <span class="option inbox chosen">INBOX (<span class="counter">8</span>)</span><span class="spacer">/</span><span class="option sent">SENT</span>
+                    </div>
+                    <img src="assets/images/create.svg" alt="create">
+                </div>
+                <div class="content">
+                    <div class="message-block">
+                        <img src="assets/images/avatar6.jpg" alt="avatar">
+                        <div class="text">
+                            <h3>Jacob Hubertus</h3>
+                            <span>Are you coming to the Roadtrip?</span>
+                        </div>
+                    </div>
+                    <div class="message-block">
+                        <img src="assets/images/avatar2.jpg" alt="avatar">
+                        <div class="text">
+                            <h3>Jasmine Larsson</h3>
+                            <span>This Pinboard idea in Chronos is neat.</span>
+                        </div>
+                    </div>
+                    <div class="message-block">
+                        <img src="assets/images/avatar5.jpg" alt="avatar">
+                        <div class="text">
+                            <h3>Trent Walton</h3>
+                            <span>I'll buy you a drink.</span>
+                        </div>
+                    </div>
+                    <div class="message-block">
+                        <img src="assets/images/avatar3.jpg" alt="avatar">
+                        <div class="text">
+                            <h3>Shanna Torres</h3>
+                            <span>Here he comes to save the day!</span>
+                        </div>
+                    </div>
+                    <div class="message-block">
+                        <img src="assets/images/avatar4.jpg" alt="avatar">
+                        <div class="text">
+                            <h3>Willem Mejia</h3>
+                            <span>I didn't want to make a big deal about it.</span>
+                        </div>
+                    </div>
+                    <div class="message-block">
+                        <img src="assets/images/avatar7.jpg" alt="avatar">
+                        <div class="text">
+                            <h3>Alexia Rhodes</h3>
+                            <span>Everyone knew about the slimy stuff she was up to.</span>
+                        </div>
+                    </div>
+                    <div class="message-block">
+                        <img src="assets/images/avatar8.jpg" alt="avatar">
+                        <div class="text">
+                            <h3>Montana Sparrow</h3>
+                            <span>Pandas should come hug me.</span>
+                        </div>
+                    </div>
+                    <div class="message-block">
+                        <img src="assets/images/avatar9.jpg" alt="avatar">
+                        <div class="text">
+                            <h3>Lacey-May Mccabe</h3>
+                            <span>Are you sure that's not a moose?</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <noscript>Your browser does not support JavaScript!</noscript>
+        <div id="featured">
+            <div class="likes">
+                <img src="assets/images/red_heart.svg" alt="like">
+                <span>10 023</span>
+            </div>
+            <h1>Roadtrip on Highway One</h1>
+            <span>26 January - 1 Februay</span>
+            <div class="coming">
+                <div id="avatars">
+                    <img src="assets/images/avatar2.jpg" alt="avatar2" class="user-avatar">
+                    <img src="assets/images/avatar3.jpg" alt="avatar3" class="user-avatar">
+                    <img src="assets/images/avatar4.jpg" alt="avatar4" class="user-avatar">
+                </div>
+                <div class="navline"></div>
+                <div class="coming-choice" class="noselect"><span class="active-choice">Yes</span>/<span>No</span></div>
+            </div>
+            <div id="menu">
+                <span>FEATURED</span>
+                <div class="horizontal-line"></div>
+                <ul id="menu-choices" class="noselect">
+                    <li>Blog Post</li>
+                    <li class="active-choice">Event</li>
+                    <li>Photo</li>
+                    <li>Music</li>
+                    <li>Video</li>
+                </ul>
+            </div>
+        </div>
+        <div id="pinboard-header">
+            <span>Your Pinboard</span>
+            <div id="sort">
+                <span>SORT BY</span>
+                <div id="choices">
+                    <div class="option"></div>
+                    <div class="option"></div>
+                    <div class="option"></div>
+                    <div class="option"></div>
+                </div>
+            </div>
+        </div>
+        <div id="pinboard">
+            <div class="post blog">
+                <div class="likes">
+                    <img src="assets/images/red_heart.svg" alt="like">
+                    <span>1 001</span>
+                </div>
+                <div class="option"></div>
+            </div>
+            <div class="post article">
+                <div class="likes">
+                    <img src="assets/images/gray_heart.svg" alt="like">
+                    <span>20</span>
+                </div>
+                <div class="option"></div>
+                <h2>This pinboard is filled with cool events, photos and media. I love it.</h2>
+            </div>
+            <div class="post">
+                <div class="likes">
+                    <img src="assets/images/red_heart.svg" alt="like">
+                    <span>99</span>
+                </div>
+                <h2>Company retreat in Deer Valley, Utah</h2>
+                <span>3pm - 8pm</span>
+                <div class="coming">
+                    <div id="avatars">
+                        <img src="assets/images/avatar5.jpg" alt="avatar2" class="user-avatar">
+                        <img src="assets/images/avatar3.jpg" alt="avatar3" class="user-avatar">
+                        <img src="assets/images/avatar6.jpg" alt="avatar4" class="user-avatar">
+                    </div>
+                    <div class="coming-choice" class="noselect"><span class="active-choice">Yes</span>/<span>No</span></div>
+                </div>
+            </div>
+            <div class="post">
+                <div class="likes">
+                    <img src="assets/images/red_heart.svg" alt="like">
+                    <span>22</span>
+                </div>
+                <h2>Daft Punk - Get Lucky</h2>
+                <div class="player">
+                    <img src="assets/images/speaker.svg" alt="speaker">
+                    <div class="player-all">
+                        <div class="played"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="post">
+                <div class="likes">
+                    <img src="assets/images/gray_heart.svg" alt="like">
+                    <span>2</span>
+                </div>
+                <h2>Summer Nights</h2>
+                <div class="player">
+                    <img src="assets/images/play.svg" alt="speaker">
+                    <div class="player-all">
+                        <div class="played"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="post article">
+                <div class="likes">
+                    <img src="assets/images/gray_heart.svg" alt="like">
+                    <span>52</span>
+                </div>
+                <h2>What if the world revolves around Doge?</h2>
+            </div>
+            <div class="post blog">
+                <div class="likes">
+                    <img src="assets/images/red_heart.svg" alt="like">
+                    <span>1 401</span>
+                </div>
+                <div class="option"></div>
+            </div>
+            <div class="post article">
+                <div class="likes">
+                    <img src="assets/images/gray_heart.svg" alt="like">
+                    <span>19</span>
+                </div>
+                <div class="option"></div>
+                <h2>Everything is so cool around here. So flat and stuff.</h2>
+            </div>
+            <div class="post">
+                <div class="likes">
+                    <img src="assets/images/red_heart.svg" alt="like">
+                    <span>52</span>
+                </div>
+                <h2>Sants Monica Pier</h2>
+            </div>
+        </div>
+    </body>
+</html>
