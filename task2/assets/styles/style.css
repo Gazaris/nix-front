@@ -144,7 +144,7 @@ header{
     top: -5px;
     background-color: white;
     border-radius: 3px;
-    rotate: 45deg;
+    transform: rotate(45deg);
 }
 #messages > .main{
     height: 100%;
