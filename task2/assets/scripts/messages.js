@@ -16,7 +16,7 @@ function closeMessages(el){
 
 // For closing the messages window when clicked anywhere else
 document.addEventListener("click", (e) => {
-    el = document.getElementById("messages");
+    let el = document.getElementById("messages");
     if (el.style.display == 'block'){
         if (!findMessages(e.target) && e.target.id != 'messages-btn') closeMessages(el);
     }
@@ -24,7 +24,7 @@ document.addEventListener("click", (e) => {
 
 // Handle the messages button click
 function messagesClick() {
-    messages = document.getElementById("messages");
+    let messages = document.getElementById("messages");
 
     // With animation and with the block gone
     if (messages.style.display == 'none'){

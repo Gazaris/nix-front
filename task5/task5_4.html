@@ -1,0 +1,69 @@
+﻿<!doctype html>
+
+<html>
+<head>
+	<title>Структура DOM</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		/*
+			Создайте и опишите функцию showDOM(), которая открывает новое окно браузера 
+				и выводит на экран структуру текущего документа, вызывая
+				рекурсивную функцию showChildNodes(node, doc)
+			1. Откройте новое окно
+			2. Отрисуйте в новом окне открывающие тэги "<html>" и "<body>" (document.write!)
+			3. Вызовите вышеописанную	функцию showChildNodes(), передав в качестве параметров:
+				- корневой элемент документа (document.documentElement) или тело документа (document.body)
+				- ссылку на объект Document нового окна
+			4. Отрисуйте в новом окне закрывающие тэги "</html>" и "</body>"	
+		*/
+		function showDOM() {
+			let wnd = window.open("", "window", "popup=true");
+			wnd.document.write(`<!DOCTYPE html>
+			<html>
+				<title>DOM structure</title>
+				<body>
+					<pre>`);
+			showChildNodes(document.body, wnd.document);
+			wnd.document.write(`
+					</pre>
+				</body>
+			</html>`);
+		}
+		
+		/*
+		 Создайте и опишите рекурсивную функцию showChildNodes(node, doc), 
+			которая отрисовывает дочерние узлы текущего узла.
+			Функция должна принимать два аргумента:
+				- node: текущий узел
+				- doc: ссылку на объект Document нового окна, в который производится вывод
+			1. Проверьте тип текущего узла
+				1.1 Если это текстовый узел - отрисуйте его содержание
+				1.2 Если это узел-элемент - выведите его название и ...
+					вызовите эту функцию для каждого из дочерних узлов	
+		*/
+		function showChildNodes(node, doc) {
+			if(node.nodeType === 3) {
+				doc.write(node.textContent);
+			} else {
+				doc.write(node.tagName + ": ");
+				for(let childNode of node.childNodes) {
+					showChildNodes(childNode, doc);
+				}
+			}
+		}
+	</script>
+</head>
+
+<body>
+	<h1>Структура DOM</h1>
+	<div>
+		<h2>Вывод структуры DOM</h2>
+		<p>Этот код открывает новое окно и выводит в него структуру текущего документа</p>
+	</div>
+	<div>
+		<h2>Запуск кода</h2>
+		<p>Для запуска кода щелкните <a href="javascript:showDOM()">здесь</a></p>
+	</div>
+
+</body>
+</html>
