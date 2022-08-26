@@ -1,0 +1,36 @@
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 52px;
+  background-color: var(--light-gray);
+  padding: 0 42px;
+}
+
+header .info {
+  display: flex;
+  flex-direction: row;
+}
+header .info .contacts {
+  margin-right: 84px;
+}
+header .info .contacts a:first-child {
+  margin-right: 41px;
+}
+header div:last-child span:first-child {
+  margin-right: 35px;
+}
+header .info a, header .info span {
+  color: var(--gray);
+  transition: .1s ease-in-out;
+}
+header .info a:hover, header .info span:hover {
+  color: var(--dark-gray);
+}
+header .info a {
+  text-decoration: none;
+}
+header .info span {
+  cursor: pointer;
+}
