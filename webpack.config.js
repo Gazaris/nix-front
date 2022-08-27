@@ -33,6 +33,11 @@ module.exports = {
         exclude: /node_modules/,
         use: ["style-loader", "css-loader"],
       },
+      {
+        test: /\.(png|j?g|svg|gif)?$/,
+        exclude: /node_modules/,
+        use: 'file-loader?name=./images/[name].[ext]'
+      }
     ],
   },
   plugins: [

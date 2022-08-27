@@ -5,6 +5,7 @@ import Navbar from './components/Navbar'
 import Catalog from './components/Catalog'
 import FeedbackForm from './components/FeedbackForm'
 import Footer from './components/Footer'
+import Product from './components/Product'
 
 const App = () => {
   return (
@@ -13,6 +14,9 @@ const App = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<Catalog />} />
+        <Route path="/item">
+          <Route path=":id" element={<Product />}/>
+        </Route>
       </Routes>
       <FeedbackForm />
       <Footer />
