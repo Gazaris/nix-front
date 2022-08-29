@@ -1,20 +1,20 @@
 #catalog {
   margin: 4px 40px 80px 40px;
 }
-#catalog .guarantees {
+.guarantees {
   margin: 60px 0;
   justify-content: space-between;
 }
-#catalog .guarantees, #catalog .guarantees > div {
+.guarantees, .guarantees > div {
   display: flex;
 }
-#catalog .guarantees .icon {
+.guarantees .icon {
   padding: 18px;
   border: solid 1px var(--divider-color);
   border-radius: 8px;
   height: 24px;
 }
-#catalog .guarantees .main {
+.guarantees .main {
   display: flex;
   flex-direction: column;
   margin: 0 16px;
@@ -25,7 +25,7 @@
   line-height: 20px;
   color: var(--gray);
 }
-#catalog .guarantees .main .heading {
+.guarantees .main .heading {
   font-family: 'Roboto Condensed', sans-serif;
   font-weight: 500;
   font-size: 20px;
@@ -105,14 +105,14 @@
   padding: 8px;
   background-color: white;
 }
-#products .taglist {
+.taglist {
   position: absolute;
   top: 8px;
   left: 4px;
   display: flex;
   flex-wrap: wrap;
 }
-#products .tag {
+.tag {
   color: white;
   margin-left: 4px;
   padding: 4px 8px;
