@@ -88,7 +88,7 @@
   justify-content: space-between;
   margin-top: 29px;
 }
-#products > div {
+.p-card {
   display: flex;
   flex-direction: column;
   margin-left: 15px;
@@ -98,7 +98,7 @@
   height: 512px;
   border-radius: 16px;
 }
-#products .preview {
+.p-card .preview {
   position: relative;
   border-radius: 12px;
   margin: 8px;
@@ -118,8 +118,7 @@
   padding: 4px 8px;
   border-radius: 8px;
 }
-
-#products .info {
+.p-card .info {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -128,37 +127,37 @@
   font-size: 16px;
   flex-grow: 1;
 }
-#products .descr .heading {
+.p-card .heading {
   margin-bottom: 8px;
 }
-#products .descr div:first-child {
+.p-card .descr div:first-child {
   margin-top: 8px;
 }
-#products .descr > div div {
+.p-card .descr > div div {
   font-size: 14px;
   display: flex;
   justify-content: space-between;
   padding: 8px 0;
   border-bottom: solid 1px var(--divider-color);
 }
-#products .descr > div div span:first-child {
+.p-card .descr > div div span:first-child {
   color: var(--gray);
 }
 
-#products .prices {
+.p-card .prices {
   font-family: 'Roboto Condensed', sans-serif;
   margin-bottom: 20px;
 }
-#products .actual {
+.p-card .actual {
   font-size: 20px;
   line-height: 24px;
   font-weight: 500;
 }
-#products .discounted {
+.p-card .discounted {
   color: var(--gray);
   margin-left: 8px;
 }
-#products .buy a {
+.p-card .buy a {
   text-decoration: none;
   color: white;
   display: flex;
@@ -169,7 +168,7 @@
   justify-content: center;
   transition: .1s ease-in-out;
 }
-#products .buy a:hover {
+.p-card .buy a:hover {
   background-color: var(--dark-gray);
 }
 

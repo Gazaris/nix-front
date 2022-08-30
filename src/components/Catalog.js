@@ -143,7 +143,7 @@ const Catalog = () => {
           <div className="main">
             <div id="products">
               {shownProducts.map((i, ii) => {
-                return <div key={ii}>
+                return <div key={ii} className="p-card">
                   <div className="preview">
                     <img src={allProducts[i].img} />
                     <div className="taglist">

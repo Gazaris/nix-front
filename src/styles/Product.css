@@ -6,6 +6,7 @@
 #product .card {
   display: flex;
   height: fit-content;
+  justify-content: space-between;
   background-color: var(--light-gray);
   border-radius: 16px;
   padding: 40px;
@@ -170,34 +171,21 @@
 #product .parts {
   display: flex;
 }
-#product .part {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 249px;
-  height: 512px;
-  background-color: var(--light-gray);
-  border-radius: 16px;
-  padding: 20px;
-}
-#product .main .preview {
-  width: fit-content;
-  margin: -12px;
-  margin-bottom: 20px;
-  padding: 8px;
-  background-color: white;
-  border-radius: 12px;
-}
-#product .buy span {
-  font-weight: 500;
-}
-#product .buy div {
-  margin-top: 20px;
-  color: white;
-  background-color: var(--black);
-  display: flex;
-  justify-content: center;
-  padding: 12px 20px;
-  border-radius: 8px;
+#product .parts a {
   cursor: not-allowed;
+}
+
+#product .buy-more {
+  margin-top: 60px;
+}
+#product .buy-more > .heading {
+  margin: 0;
+}
+#product .buy-more .products {
+  margin-top: 24px;
+  display: flex;
+  justify-content: space-between;
+}
+#product .buy-more .p-card:first-child {
+  margin-left: 0;
 }

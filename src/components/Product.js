@@ -14,7 +14,7 @@ import YoutubeEmbed from './YoutubeEmbed'
 
 const Product = () => {
   const navigate = useNavigate()
-  const [ additOpt, setAdditOption ] = useState(0);
+  const [ additOpt, setAdditOption ] = useState(3);
   const { id } = useParams()
   const usedId = Number(id);
   const tagTypes = [
@@ -116,7 +116,7 @@ const Product = () => {
       navigate("/404", { replace: true })
     }
   }, [])
-  if(!usedId)
+  if(!usedId && usedId !== 0)
     return <div></div>
   else
     return (
@@ -165,10 +165,14 @@ const Product = () => {
           <div className="menu">
             <div className="divider" />
             <div className="options">
-              <div onClick={() => setAdditOption(0)} className={"noselect" + (additOpt === 0 ? " chosen" : "")}>Описание</div>
-              <div onClick={() => setAdditOption(1)} className={"noselect" + (additOpt === 1 ? " chosen" : "")}>Характеристики</div>
-              <div onClick={() => setAdditOption(2)} className={"noselect" + (additOpt === 2 ? " chosen" : "")}>Видео</div>
-              <div onClick={() => setAdditOption(3)} className={"noselect" + (additOpt === 3 ? " chosen" : "")}>Запасные части</div>
+              <div onClick={() => setAdditOption(0)}
+                className={"noselect" + (additOpt === 0 ? " chosen" : "")}>Описание</div>
+              <div onClick={() => setAdditOption(1)}
+                className={"noselect" + (additOpt === 1 ? " chosen" : "")}>Характеристики</div>
+              <div onClick={() => setAdditOption(2)}
+                className={"noselect" + (additOpt === 2 ? " chosen" : "")}>Видео</div>
+              <div onClick={() => setAdditOption(3)}
+                className={"noselect" + (additOpt === 3 ? " chosen" : "")}>Запасные части</div>
             </div>
           </div>
           {additOpt === 0 && <div className="content description">
@@ -209,20 +213,64 @@ const Product = () => {
           </div>}
           {additOpt === 3 && <div className="content parts">
             {parts.map(p => {
-              return <div key={p.name} className="part">
-                <div className="main">
-                  <div className="preview">
-                    <img src={p.img} />
-                  </div>
-                  <span>{p.name}</span>
+              return <div key={p.name} className="p-card">
+                <div className="preview">
+                  <img src={p.img} />
                 </div>
-                <div className="buy">
-                  <span>{p.price} $</span>
-                  <div>Купить</div>
+                <div className="info">
+                  <span className="heading">{p.name}</span>
+                  <div className="buy">
+                    <div className="prices">
+                      <span className="actual">{p.price} $</span>
+                    </div>
+                    <a>Купить</a>
+                  </div>
                 </div>
               </div>
             })}
           </div>}
+          <div className="buy-more">
+            <span className="heading">С этим товаром также смотрят</span>
+            <div className="products">
+              {moreProducts.map((p, pi) => {
+                return <div key={pi} className="p-card">
+                    <div className="preview">
+                    <img src={allProducts[p].img} />
+                    <div className="taglist">
+                      {allProducts[p].tags.map((t, it) => {
+                        return <div
+                          key={it}
+                          className="noselect tag"
+                          style={{backgroundColor: tagTypes[t].color}}
+                        >{tagTypes[t].text}</div>
+                      })}
+                    </div>
+                  </div>
+                  <div className="info">
+                    <div className="descr">
+                      <span className="heading">{allProducts[p].name}</span>
+                      <div>
+                        {productDescr.map(d => {
+                          return <div key={d.name}>
+                            <span className="name">{d.name}</span>
+                            <span className="val">{d.value}</span>
+                          </div>
+                        })}
+                      </div>
+                    </div>
+                    <div className="buy">
+                      <div className="prices">
+                        <span className="actual">34 990 $</span>
+                        {allProducts[p].tags.includes(0) &&
+                          <s className="discounted">24 450 ₽</s>}
+                      </div>
+                      <Link to={"/item/" + p}>Купить</Link>
+                    </div>
+                  </div>
+                </div>
+              })}
+            </div>
+          </div>
         </div>
       </div>
     )
