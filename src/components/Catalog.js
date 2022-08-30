@@ -52,8 +52,11 @@ const Catalog = () => {
       name: "SG-006-1 Станок для разделки кабеля (Автоматический)"
     }
   ]
-  const baseProducts = [0, 1, 2, 1, 2, 0, 0, 1, 2]
-  const [ shownProducts, setShownProducts ] = useState([...baseProducts])
+  const baseAllProducts = [0, 1, 2, 1, 2, 0, 0, 1, 2]
+  const discountedProducts = [1, 1, 1, 1, 1, 1, 1, 1, 1]
+  const cableProducts = [1, 2, 2, 1, 1, 2, 2, 1, 1]
+  const [ currBaseProducts, setCurrBaseProducts ] = useState([...baseAllProducts])
+  const [ shownProducts, setShownProducts ] = useState([...baseAllProducts])
   const productDescr = [
     {
       name: "Вес",
@@ -80,9 +83,30 @@ const Catalog = () => {
       .getElementsByClassName('options')[0]
       .children[i]
       .classList.add("chosen");
+
+    // Changing shown products
+    switch (i) {
+      case 1:
+        setShownProducts([...discountedProducts])
+        setCurrBaseProducts([...discountedProducts])
+        break
+      case 2:
+        setShownProducts([...cableProducts])
+        setCurrBaseProducts([...cableProducts])
+        break
+      case 2:
+        setShownProducts([...cableProducts])
+        setCurrBaseProducts([...cableProducts])
+        break
+      default:
+        setShownProducts([...baseAllProducts])
+        setCurrBaseProducts([...baseAllProducts])
+        break
+    }
   }
   const showMore = () => {
-    setShownProducts(shownProducts.concat(baseProducts))
+    if(shownProducts.length < 126)
+      setShownProducts(shownProducts.concat(currBaseProducts))
   }
   return (
     <div id="catalog">
@@ -130,7 +154,7 @@ const Catalog = () => {
             </div>
             {options.map((opt, i) => {
               return <div
-                key={opt}
+                key={i}
                 onClick={() => moveChosen(i + 2)}
               >
                 <span className="noselect">{opt}</span>
